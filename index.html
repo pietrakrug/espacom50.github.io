@@ -1,482 +1,520 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESPAÇO M50</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <title>Espaço M50</title>
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f6f1ea;
+      color: #2a2a2a;
+      line-height: 1.6;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    header {
+      background-color: #1c1c1c;
+      color: #fff;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f1eb;
-            color: #2b2b2b;
-            line-height: 1.6;
-        }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        header {
-            background-color: #1d1d1d;
-            color: white;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
 
-        header h1 {
-            font-size: 28px;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 15px;
-        }
+    nav a:hover {
+      color: #c79b68;
+    }
 
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.55),
-            rgba(0,0,0,0.55)),
-            url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop');
+    .hero {
+      min-height: 88vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      color: #fff;
+    }
 
-            background-size: cover;
-            background-position: center;
+    .hero-content {
+      max-width: 700px;
+    }
 
-            color: white;
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.08;
+      margin-bottom: 22px;
+    }
 
-            min-height: 85vh;
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 30px;
+      max-width: 620px;
+    }
 
-            display: flex;
-            align-items: center;
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
 
-            padding: 0 10%;
-        }
+    .btn {
+      display: inline-block;
+      padding: 15px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-        .hero-content {
-            max-width: 650px;
-        }
+    .btn-primary {
+      background-color: #b88652;
+      color: #fff;
+    }
 
-        .hero h2 {
-            font-size: 54px;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
+    .btn-primary:hover {
+      background-color: #9f7347;
+    }
 
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 35px;
-        }
+    .btn-secondary {
+      background-color: #fff;
+      color: #1c1c1c;
+    }
 
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+    .btn-secondary:hover {
+      background-color: #ececec;
+    }
 
-        .btn {
-            padding: 15px 28px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    .rating {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background-color: rgba(255,255,255,0.10);
+      border-radius: 999px;
+      font-size: 15px;
+    }
 
-        .btn-primary {
-            background-color: #b68b5c;
-            color: white;
-        }
+    section {
+      padding: 85px 8%;
+      scroll-margin-top: 90px;
+    }
 
-        .btn-primary:hover {
-            background-color: #9b744a;
-        }
+    .section-title {
+      font-size: 40px;
+      margin-bottom: 18px;
+      color: #1f1f1f;
+    }
 
-        .btn-secondary {
-            background-color: white;
-            color: #1d1d1d;
-        }
+    .section-text {
+      font-size: 18px;
+      max-width: 820px;
+      margin-bottom: 40px;
+    }
 
-        section {
-            padding: 90px 10%;
-        }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+    }
 
-        .section-title {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
+    .card {
+      background-color: #fff;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
 
-        .section-text {
-            font-size: 18px;
-            max-width: 800px;
-            margin-bottom: 50px;
-        }
+    .card h3 {
+      margin-bottom: 12px;
+      color: #b88652;
+      font-size: 22px;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-            gap: 25px;
-        }
+    .methodology {
+      background-color: #1f1f1f;
+      color: #fff;
+    }
 
-        .card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 14px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+    .methodology .section-title,
+    .methodology .section-text {
+      color: #fff;
+    }
 
-        .card h3 {
-            margin-bottom: 15px;
-            color: #b68b5c;
-        }
+    .methodology .card {
+      background-color: #2d2d2d;
+      color: #fff;
+      box-shadow: none;
+    }
 
-        .methodology {
-            background-color: #1d1d1d;
-            color: white;
-        }
+    .partners {
+      background-color: #efe7dc;
+    }
 
-        .methodology .card {
-            background-color: #2c2c2c;
-            color: white;
-        }
+    .placeholder-box {
+      background-color: #fff;
+      border: 2px dashed #c9b199;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      font-size: 18px;
+      color: #6e5b4a;
+    }
 
-        .testimonials {
-            background-color: #ede6dc;
-        }
+    .testimonials {
+      background-color: #fff;
+    }
 
-        .testimonial {
-            background-color: white;
-            padding: 30px;
-            border-radius: 14px;
-        }
+    .testimonial {
+      background-color: #f8f4ee;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    }
 
-        .testimonial strong {
-            display: block;
-            margin-top: 20px;
-        }
+    .testimonial p {
+      margin-bottom: 18px;
+    }
 
-        .location {
-            background-color: white;
-        }
+    .testimonial strong {
+      color: #1c1c1c;
+      display: block;
+      margin-top: 8px;
+    }
 
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-            border-radius: 14px;
-            margin-top: 30px;
-        }
+    .contact {
+      background-color: #1c1c1c;
+      color: #fff;
+    }
 
-        footer {
-            background-color: #1d1d1d;
-            color: white;
-            padding: 60px 10%;
-        }
+    .contact .section-title,
+    .contact .section-text,
+    .contact h3,
+    .contact p,
+    .contact a {
+      color: #fff;
+    }
 
-        footer p {
-            margin-bottom: 10px;
-        }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
 
-        .socials a {
-            color: #b68b5c;
-            text-decoration: none;
-            margin-right: 15px;
-        }
+    .contact-card {
+      background-color: #2a2a2a;
+      border-radius: 16px;
+      padding: 28px;
+    }
 
-        @media(max-width:768px) {
+    .contact-card h3 {
+      margin-bottom: 15px;
+      color: #d8ab77;
+    }
 
-            header {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
+    .contact-card p {
+      margin-bottom: 10px;
+    }
 
-            nav a {
-                margin: 0 10px;
-            }
+    .contact-card a {
+      text-decoration: none;
+      color: #d8ab77;
+    }
 
-            .hero h2 {
-                font-size: 38px;
-            }
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: none;
+      border-radius: 16px;
+    }
 
-            .hero p {
-                font-size: 18px;
-            }
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 35px 8%;
+      text-align: center;
+    }
 
-        }
+    footer a {
+      color: #d8ab77;
+      text-decoration: none;
+    }
 
-    </style>
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>
-
-        <h1>Espaço M50</h1>
-
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Metodologia</a>
-            <a href="#">Aulas</a>
-            <a href="#">Parceiros</a>
-            <a href="#">Depoimentos</a>
-            <a href="#">Contato</a>
-        </nav>
-
-    </header>
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <h2>
-                Sua saúde, força e qualidade de vida começam aqui.
-            </h2>
-
-            <p>
-                Treinos semi-personalizados, acompanhamento próximo
-                e um ambiente pensado para sua evolução física e mental.
-            </p>
-
-            <div class="buttons">
-
-                <a class="btn btn-primary" href="#">
-                    Agendar avaliação
-                </a>
-
-                <a class="btn btn-secondary" href="#">
-                    Conhecer o espaço
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <h2 class="section-title">
-            Mais do que uma academia.
-        </h2>
-
-        <p class="section-text">
-            O Espaço M50 une treinamento direcionado,
-            acompanhamento próximo e um ambiente acolhedor
-            para pessoas que querem cuidar da saúde,
-            melhorar a disposição e evoluir com constância.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Semi-personal</h3>
-                <p>Treinos com atenção individualizada.</p>
-            </div>
-
-            <div class="card">
-                <h3>Ambiente acolhedor</h3>
-                <p>Um espaço confortável e motivador.</p>
-            </div>
-
-            <div class="card">
-                <h3>Profissionais qualificados</h3>
-                <p>Acompanhamento próximo e seguro.</p>
-            </div>
-
-            <div class="card">
-                <h3>Metodologia 50+</h3>
-                <p>Treinos pensados para evolução constante.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="methodology">
-
-        <h2 class="section-title">
-            Como funciona a Metodologia 50+
-        </h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>1. Avaliação inicial</h3>
-                <p>Entendimento dos objetivos e limitações.</p>
-            </div>
-
-            <div class="card">
-                <h3>2. Treino direcionado</h3>
-                <p>Treinos adaptados à realidade de cada aluno.</p>
-            </div>
-
-            <div class="card">
-                <h3>3. Acompanhamento</h3>
-                <p>Correções e suporte constantes.</p>
-            </div>
-
-            <div class="card">
-                <h3>4. Evolução contínua</h3>
-                <p>Ajustes conforme o progresso do aluno.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <h2 class="section-title">
-            Aulas coletivas
-        </h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Funcional</h3>
-                <p>Movimento, força e condicionamento.</p>
-            </div>
-
-            <div class="card">
-                <h3>Alongamento</h3>
-                <p>Mobilidade e prevenção de dores.</p>
-            </div>
-
-            <div class="card">
-                <h3>Pilates</h3>
-                <p>Consciência corporal e fortalecimento.</p>
-            </div>
-
-            <div class="card">
-                <h3>Yoga</h3>
-                <p>Equilíbrio entre corpo e mente.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <h2 class="section-title">
-            Rede de parceiros
-        </h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>TotalPass</h3>
-            </div>
-
-            <div class="card">
-                <h3>Wellhub</h3>
-            </div>
-
-            <div class="card">
-                <h3>Profissionais da saúde</h3>
-            </div>
-
-            <div class="card">
-                <h3>Empresas parceiras</h3>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="testimonials">
-
-        <h2 class="section-title">
-            O que nossos alunos dizem
-        </h2>
-
-        <div class="cards">
-
-            <div class="testimonial">
-                <p>
-                    “Ambiente acolhedor e professores extremamente atentos.”
-                </p>
-
-                <strong>★★★★★</strong>
-                <span>Mariana</span>
-            </div>
-
-            <div class="testimonial">
-                <p>
-                    “Me sinto mais disposto e seguro nos treinos.”
-                </p>
-
-                <strong>★★★★★</strong>
-                <span>Carlos</span>
-            </div>
-
-            <div class="testimonial">
-                <p>
-                    “Acompanhamento realmente próximo e humano.”
-                </p>
-
-                <strong>★★★★★</strong>
-                <span>Fernanda</span>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="location">
-
-        <h2 class="section-title">
-            Como chegar
-        </h2>
-
-        <p class="section-text">
-            Rua Hilário Ribeiro, 50 — Moinhos de Vento — Porto Alegre
-            <br><br>
-            ✔ Fácil acesso
-            <br>
-            ✔ Região segura
-            <br>
-            ✔ Próximo ao Hospital Moinhos
-        </p>
-
+  <header>
+    <div class="logo">ESPAÇO M50</div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#parceiros">Parceiros</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Sua saúde, força e qualidade de vida começam aqui.</h1>
+      <p>
+        Treinos semi-personalizados, acompanhamento próximo e um ambiente pensado para fortalecer
+        corpo, mente e autonomia em cada etapa da sua evolução.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://wa.me/5551990131230?text=Olá!%20Vim%20pelo%20site%20do%20Espaço%20M50%20e%20gostaria%20de%20agendar%20uma%20avaliação." target="_blank">Agendar avaliação</a>
+        <a class="btn btn-secondary" href="#contato">Conhecer o espaço</a>
+      </div>
+
+      <div class="rating">★★★★★ 4.9 no Google</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Um espaço pensado para longevidade com movimento</h2>
+    <p class="section-text">
+      No ESPAÇO M50, o treino vai além da estética. Aqui, cada aluno encontra orientação próxima,
+      segurança, acolhimento e uma metodologia que respeita limites sem abrir mão de evolução,
+      disposição e qualidade de vida.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Semi-personal</h3>
+        <p>Treinos com atenção individualizada, correções constantes e acompanhamento próximo.</p>
+      </div>
+      <div class="card">
+        <h3>Ambiente acolhedor</h3>
+        <p>Um espaço pensado para gerar segurança, constância e bem-estar no processo de treino.</p>
+      </div>
+      <div class="card">
+        <h3>Equipe atenta</h3>
+        <p>Profissionais preparados para orientar, adaptar e incentivar cada aluno com presença real.</p>
+      </div>
+      <div class="card">
+        <h3>Saúde e autonomia</h3>
+        <p>Um trabalho voltado para força, mobilidade, disposição e qualidade de vida no dia a dia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="methodology" id="metodologia">
+    <h2 class="section-title">Metodologia</h2>
+    <p class="section-text">
+      Cada pessoa chega com uma história, uma rotina e um corpo diferente. Por isso, o trabalho no
+      ESPAÇO M50 combina avaliação, direcionamento e acompanhamento próximo para promover evolução com segurança.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>1. Avaliação inicial</h3>
+        <p>Entendimento dos objetivos, histórico, rotina e necessidades de cada aluno.</p>
+      </div>
+      <div class="card">
+        <h3>2. Direcionamento do treino</h3>
+        <p>Prescrição adaptada à realidade individual, com foco em progresso consistente.</p>
+      </div>
+      <div class="card">
+        <h3>3. Correção e acompanhamento</h3>
+        <p>Supervisão próxima durante os treinos para garantir execução segura e eficiente.</p>
+      </div>
+      <div class="card">
+        <h3>4. Evolução contínua</h3>
+        <p>Ajustes frequentes para manter motivação, resultado e respeito ao tempo de cada corpo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="aulas">
+    <h2 class="section-title">Aulas e serviços</h2>
+    <p class="section-text">
+      O ESPAÇO M50 reúne modalidades que ampliam força, mobilidade, equilíbrio, consciência corporal e bem-estar.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Musculação</h3>
+        <p>Fortalecimento com acompanhamento próximo e foco em saúde e funcionalidade.</p>
+      </div>
+      <div class="card">
+        <h3>Pilates</h3>
+        <p>Mais consciência corporal, estabilidade, postura e fortalecimento global.</p>
+      </div>
+      <div class="card">
+        <h3>Yoga</h3>
+        <p>Equilíbrio entre corpo e mente, com atenção à respiração, mobilidade e presença.</p>
+      </div>
+      <div class="card">
+        <h3>Dança</h3>
+        <p>Movimento, coordenação, socialização e prazer em uma prática leve e envolvente.</p>
+      </div>
+      <div class="card">
+        <h3>Alongamento</h3>
+        <p>Mais mobilidade, alívio de tensões e prevenção de desconfortos no cotidiano.</p>
+      </div>
+      <div class="card">
+        <h3>Semi-personal</h3>
+        <p>Atendimento mais próximo para quem busca evolução com suporte constante.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners" id="parceiros">
+    <h2 class="section-title">Parceiros</h2>
+    <p class="section-text">
+      Estamos organizando esta área para apresentar nossos parceiros locais, conexões e marcas que fazem parte da nossa rede.
+    </p>
+
+    <div class="placeholder-box">
+      Parceiros em breve.
+    </div>
+  </section>
+
+  <section class="testimonials" id="depoimentos">
+    <h2 class="section-title">Depoimentos</h2>
+    <p class="section-text">
+      A experiência dos nossos alunos traduz o que buscamos construir todos os dias: um espaço de cuidado, evolução e acolhimento.
+    </p>
+
+    <div class="cards">
+      <div class="testimonial">
+        <p>“Comecei na academia buscando mais saúde, disposição e qualidade de vida – e encontrei muito mais! A equipe é super atenciosa, os professores têm paciência e preparo para trabalhar com a nossa faixa etária, respeitando nossos limites, mas também incentivando o progresso. Os treinos são personalizados, e o ambiente é acolhedor, sem aquela pressão ou competição que vemos em outras academias. Também tem as aulas de dança, mat pilates, alongamento e yoga. Recomendo muito para quem quer cuidar do corpo e da mente com segurança e motivação. Meus filhos também usufruem deste espaço. Parabéns à equipe!”</p>
+        <strong>Juciane Alessi</strong>
+      </div>
+
+      <div class="testimonial">
+        <p>“Sem dúvidas a melhor academia do bairro. O ambiente tem uma limpeza impecável, professores e equipe sempre prestativos para ajudar e com sorriso no rosto. Aparelhos de ótima qualidade e com a manutenção sempre em dia. Os equipamentos são bem distribuídos pela academia, o que faz não ocorrer aquela lotação em determinados ambientes. A vibe do lugar é ótima e os frequentadores são todos muito simpáticos também. Recomendo sem pensar duas vezes!”</p>
+        <strong>Silvio Streit</strong>
+      </div>
+
+      <div class="testimonial">
+        <p>“É sem dúvidas a melhor academia que já treinei! Os aparelhos e equipamentos são novos e de excelente qualidade. Além disso, os professores são extremamente engajados, montam treinos personalizados e acompanham de perto cada movimento, corrigindo sempre que necessário. Super recomendo!”</p>
+        <strong>Pri Milani</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <h2 class="section-title">Contato e localização</h2>
+    <p class="section-text">
+      Estamos no coração do Moinhos de Vento, em Porto Alegre, com estrutura pensada para acolher,
+      orientar e acompanhar cada aluno com proximidade.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Fale com a gente</h3>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5551990131230?text=Olá!%20Vim%20pelo%20site%20do%20Espaço%20M50%20e%20gostaria%20de%20mais%20informações." target="_blank">(51) 99013-1230</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/espacom50/" target="_blank">@espacom50</a></p>
+        <p><strong>Endereço:</strong> Rua Hilário Ribeiro, 50 - Moinhos de Vento, Porto Alegre</p>
+        <p><strong>Segunda a sexta:</strong> 6h às 22h</p>
+        <p><strong>Sábado:</strong> 9h às 14h</p>
+        <p><strong>Domingo e feriado:</strong> 9h às 12h30</p>
+        <br>
+        <a class="btn btn-primary" href="https://wa.me/5551990131230?text=Olá!%20Vim%20pelo%20site%20do%20Espaço%20M50%20e%20quero%20conhecer%20o%20espaço." target="_blank">Chamar no WhatsApp</a>
+      </div>
+
+      <div>
         <iframe
-            src="https://www.google.com/maps?q=Rua+Hilario+Ribeiro+50+Porto+Alegre&output=embed">
+          src="https://www.google.com/maps?q=Rua+Hilario+Ribeiro+50+Porto+Alegre&output=embed"
+          loading="lazy">
         </iframe>
+      </div>
+    </div>
+  </section>
 
-    </section>
-
-    <footer>
-
-        <h2>Espaço M50</h2>
-
-        <br>
-
-        <p>📞 (51) 99999-9999</p>
-        <p>📍 Porto Alegre - RS</p>
-
-        <br>
-
-        <div class="socials">
-
-            <a href="#">Instagram</a>
-            <a href="#">WhatsApp</a>
-            <a href="#">Facebook</a>
-
-        </div>
-
-    </footer>
+  <footer>
+    <p><strong>ESPAÇO M50</strong> • Rua Hilário Ribeiro, 50 - Moinhos de Vento, Porto Alegre</p>
+    <p>
+      <a href="https://www.instagram.com/espacom50/" target="_blank">Instagram</a> •
+      <a href="https://wa.me/5551990131230" target="_blank">WhatsApp</a> •
+      <a href="https://maps.app.goo.gl/BfgPzKUgiJQu4eJF8" target="_blank">Como chegar</a>
+    </p>
+  </footer>
 
 </body>
-
 </html>
-```
