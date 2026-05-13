@@ -180,8 +180,9 @@
     .rating-link {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      padding: 10px 16px;
+      padding: 12px 18px;
       border: 1px solid rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.10);
       border-radius: 999px;
@@ -189,6 +190,7 @@
       color: #fff;
       text-decoration: none;
       transition: 0.3s;
+      text-align: center;
     }
 
     .rating-link:hover {
@@ -735,34 +737,40 @@
       }
 
       .hero {
-        min-height: auto;
-        padding: 84px 5% 56px;
-        background-position: 58% 22%;
+        min-height: 92vh;
+        padding: 48px 5% 40px;
+        background-position: 64% 18%;
+        align-items: flex-end;
       }
 
       .hero-content {
         width: 100%;
-        padding: 22px 18px;
+        max-width: 100%;
+        padding: 18px 16px;
         border-radius: 16px;
       }
 
       .hero-brand {
         text-align: center;
-        font-size: 16px;
-        letter-spacing: 3px;
+        font-size: 14px;
+        letter-spacing: 2.5px;
         font-weight: 700;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
         color: rgba(255,255,255,0.94);
       }
 
       .hero h1 {
-        font-size: 34px;
+        font-size: 28px;
+        line-height: 1.1;
         text-align: center;
+        margin-bottom: 12px;
       }
 
       .hero p {
-        font-size: 17px;
+        font-size: 15px;
+        line-height: 1.45;
         text-align: center;
+        margin-bottom: 18px;
       }
 
       .buttons,
@@ -779,6 +787,8 @@
       .rating-link {
         width: 100%;
         justify-content: center;
+        font-size: 14px;
+        line-height: 1.4;
       }
 
       .section-title {
@@ -868,10 +878,10 @@
         <h1>Movimento, força e autonomia para 50+</h1>
         <p>Um espaço pensado para quem quer treinar com segurança, acompanhamento profissional e foco em qualidade de vida.</p>
         <div class="buttons">
-          <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Converse com nossos especialistas agora</a>
+          <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Agendar Experiência inicial</a>
           <a class="btn btn-secondary" href="#modalidades">Ver modalidades</a>
         </div>
-        <a class="rating-link" href="https://www.google.com/search?q=Espa%C3%A7o+M50+Porto+Alegre#lrd=0x95197969a12432ff:0x6dd8abf34f2a7f87,1,,,," target="_blank" rel="noopener noreferrer">⭐ 5,0 no Google</a>
+        <a class="rating-link" href="https://www.google.com/search?q=Espa%C3%A7o+M50+Porto+Alegre#lrd=0x95197969a12432ff:0x6dd8abf34f2a7f87,1,,,," target="_blank" rel="noopener noreferrer">Nota 4,9 no Google - veja o que os nossos alunos estão comentando</a>
       </div>
     </section>
 
@@ -1069,9 +1079,7 @@
       const button = item.querySelector('.faq-question');
       button.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-
         faqItems.forEach((faq) => faq.classList.remove('active'));
-
         if (!isActive) {
           item.classList.add('active');
         }
@@ -1130,7 +1138,6 @@
 
     document.addEventListener('keydown', (event) => {
       if (!modal.classList.contains('active')) return;
-
       if (event.key === 'Escape') closeImageModal();
       if (event.key === 'ArrowRight') showNextImage();
       if (event.key === 'ArrowLeft') showPrevImage();
