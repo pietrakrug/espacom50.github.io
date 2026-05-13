@@ -741,11 +741,13 @@
       .hero {
         position: relative;
         min-height: 72vh;
-        padding: 120px 5% 20px;
+        padding: 120px 5% 110px;
+        margin-bottom: -96px;
         background-size: cover;
         background-position: center top;
         align-items: flex-start;
         overflow: hidden;
+        z-index: 1;
       }
 
       .hero::before {
@@ -824,6 +826,15 @@
 
       section {
         padding: 64px 5%;
+      }
+
+      .intro-block {
+        position: relative;
+        z-index: 3;
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+        margin-top: 0;
+        padding-top: 42px;
       }
 
       .modalities .cards,
