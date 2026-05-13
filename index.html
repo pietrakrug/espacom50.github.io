@@ -226,9 +226,9 @@
     }
 
     .modalities .cards {
-      grid-template-columns: 1.2fr repeat(4, 1fr);
-      gap: 14px;
-      align-items: stretch;
+      grid-template-columns: 1.35fr repeat(4, minmax(150px, 1fr));
+      gap: 12px;
+      align-items: start;
     }
 
     .card {
@@ -265,59 +265,17 @@
     }
 
     .class-card {
-      display: flex;
-      flex-direction: column;
-      min-height: auto;
-      padding: 16px 14px;
-      text-align: center;
-      align-items: stretch;
-      justify-content: flex-start;
-    }
-
-    .class-card h3 {
-      font-size: 18px;
-      line-height: 1.2;
-      margin: 0 0 8px;
-      min-height: auto;
       display: block;
-      text-align: center;
-    }
-
-    .class-card p {
-      font-size: 13px;
-      line-height: 1.45;
-      color: var(--text-soft);
-      text-align: center;
-      max-width: 100%;
-      margin: 0;
-    }
-
-    .class-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: var(--red-soft);
-      color: var(--red);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin: 0 auto 14px;
-      box-shadow: inset 0 0 0 1px rgba(161, 15, 26, 0.12);
-    }
-
-    .class-card.featured .class-icon {
-      background: rgba(255,255,255,0.18);
-      color: var(--white);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+      min-height: unset;
+      padding: 0;
+      text-align: left;
+      overflow: hidden;
     }
 
     .class-card.featured {
       background: var(--red);
       border: 1px solid var(--red-dark);
-      min-height: auto;
-      transform: scale(1.01);
-      justify-content: flex-start;
+      transform: none;
     }
 
     .class-card.featured h3,
@@ -326,7 +284,7 @@
     }
 
     .class-accordion {
-      padding: 14px 14px;
+      padding: 0;
     }
 
     .class-accordion summary {
@@ -336,6 +294,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+      padding: 16px 14px;
+      min-height: 92px;
     }
 
     .class-accordion summary::-webkit-details-marker {
@@ -350,7 +310,7 @@
     }
 
     .summary-left span:last-child {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--red);
       line-height: 1.15;
@@ -361,12 +321,33 @@
       color: var(--white);
     }
 
+    .class-icon {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 50%;
+      background: var(--red-soft);
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin: 0;
+      box-shadow: inset 0 0 0 1px rgba(161, 15, 26, 0.12);
+    }
+
+    .class-card.featured .class-icon {
+      background: rgba(255,255,255,0.18);
+      color: var(--white);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+    }
+
     .summary-indicator {
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1;
       color: var(--red);
       flex-shrink: 0;
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease;
     }
 
     .featured .summary-indicator {
@@ -378,13 +359,18 @@
     }
 
     .class-content {
-      padding-top: 10px;
+      padding: 0 14px 16px;
     }
 
     .class-content p {
       margin: 0;
       font-size: 13px;
       line-height: 1.45;
+      text-align: left;
+    }
+
+    .class-card:not([open]) .class-content {
+      display: none;
     }
 
     .schedule-block {
@@ -931,6 +917,7 @@
       .class-icon {
         width: 36px;
         height: 36px;
+        min-width: 36px;
         font-size: 18px;
         margin: 0;
       }
@@ -1359,6 +1346,20 @@
       if (event.key === 'Escape') closeImageModal();
       if (event.key === 'ArrowRight') showNextImage();
       if (event.key === 'ArrowLeft') showPrevImage();
+    });
+
+    const modalityItems = document.querySelectorAll('.class-accordion');
+
+    modalityItems.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          modalityItems.forEach((other) => {
+            if (other !== item) {
+              other.open = false;
+            }
+          });
+        }
+      });
     });
   </script>
 </body>
