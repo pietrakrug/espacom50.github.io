@@ -57,7 +57,7 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
       text-decoration: none;
       color: #fff;
       background: transparent;
@@ -69,10 +69,12 @@
       display: block;
       mix-blend-mode: screen;
       background: transparent;
+      flex-shrink: 0;
     }
 
     .logo-symbol {
-      height: 72px;
+      height: 92px;
+      max-height: none;
     }
 
     nav {
@@ -180,9 +182,8 @@
     .rating-link {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      padding: 12px 18px;
+      padding: 10px 16px;
       border: 1px solid rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.10);
       border-radius: 999px;
@@ -190,7 +191,6 @@
       color: #fff;
       text-decoration: none;
       transition: 0.3s;
-      text-align: center;
     }
 
     .rating-link:hover {
@@ -724,7 +724,7 @@
       }
 
       .logo-symbol {
-        height: 64px;
+        height: 78px;
       }
 
       nav {
@@ -737,8 +737,8 @@
       }
 
       .hero {
-        min-height: 78vh;
-        padding: 110px 5% 32px;
+        min-height: 46vh;
+        padding: 96px 5% 20px;
         background-size: cover;
         background-position: center 22%;
         align-items: flex-end;
@@ -747,9 +747,9 @@
       .hero-content {
         width: 100%;
         max-width: 100%;
-        padding: 16px 14px;
-        border-radius: 16px;
-        background: rgba(0,0,0,0.38);
+        padding: 14px 12px;
+        border-radius: 14px;
+        background: rgba(0,0,0,0.42);
       }
 
       .hero-brand {
@@ -762,17 +762,17 @@
       }
 
       .hero h1 {
-        font-size: 28px;
-        line-height: 1.1;
+        font-size: 24px;
+        line-height: 1.08;
         text-align: center;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
 
       .hero p {
-        font-size: 15px;
-        line-height: 1.45;
+        font-size: 14px;
+        line-height: 1.38;
         text-align: center;
-        margin-bottom: 18px;
+        margin-bottom: 14px;
       }
 
       .buttons,
