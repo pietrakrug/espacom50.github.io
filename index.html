@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ESPAÇO M50</title>
   <style>
     * {
@@ -60,8 +60,8 @@
     .hero {
       min-height: 88vh;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-        url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop');
+        linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
+        url('imagens/6.png');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -186,14 +186,18 @@
       background-color: #efe7dc;
     }
 
-    .space-placeholder {
-      background-color: #fff;
-      border: 2px dashed #c9b199;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
       border-radius: 16px;
-      padding: 48px 28px;
-      text-align: center;
-      color: #6e5b4a;
-      font-size: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
     .partners {
@@ -469,12 +473,19 @@
   <section class="space-section" id="espaco">
     <h2 class="section-title">Conheça o espaço</h2>
     <p class="section-text">
-      Aqui você poderá apresentar fotos do ambiente, estrutura, aparelhos e detalhes que ajudam a transmitir
-      acolhimento, organização e a experiência real de treinar no ESPAÇO M50.
+      Um ambiente acolhedor, bem localizado e preparado para proporcionar conforto,
+      segurança e uma experiência de treino mais próxima, organizada e motivadora.
     </p>
 
-    <div class="space-placeholder">
-      Área reservada para foto do espaço.
+    <div class="gallery">
+      <img src="imagens/99246.jpg" alt="Fachada do Espaço M50">
+      <img src="imagens/99248.jpg" alt="Entrada do Espaço M50">
+      <img src="imagens/99249.jpg" alt="Vista externa do Espaço M50">
+      <img src="imagens/99247.jpg" alt="Vista interna da academia">
+      <img src="imagens/99254.jpg" alt="Área de esteiras da academia">
+      <img src="imagens/99238.jpg" alt="Área de pesos e equipamentos">
+      <img src="imagens/99237.jpg" alt="Equipamentos da academia">
+      <img src="imagens/99235.jpg" alt="Visão interna do espaço">
     </div>
   </section>
 
@@ -497,7 +508,7 @@
 
     <div class="cards">
       <div class="testimonial">
-        <p>“Comecei na academia buscando mais saúde, disposição e qualidade de vida — e encontrei muito mais. A equipe é super atenciosa, os professores têm paciência e preparo para trabalhar com a nossa faixa etária, respeitando nossos limites, mas também incentivando o progresso. Os treinos são personalizados, e o ambiente é acolhedor, sem aquela pressão ou competição que vemos em outras academias. Também tem aulas de dança, mat pilates, alongamento e yoga. Recomendo muito para quem quer cuidar do corpo e da mente com segurança e motivação. Meus filhos também usufruem deste espaço. Parabéns à equipe!”</p>
+        <p>“Comecei na academia buscando mais saúde, disposição e qualidade de vida — e encontrei muito mais! A equipe é super atenciosa, os professores têm paciência e preparo para trabalhar com a nossa faixa etária, respeitando nossos limites, mas também incentivando o progresso. Os treinos são personalizados, e o ambiente é acolhedor, sem aquela pressão ou competição que vemos em outras academias. Também tem as aulas de dança, mat pilates, alongamento e yoga. Recomendo muito para quem quer cuidar do corpo e da mente com segurança e motivação. Meus filhos também usufruem deste espaço. Parabéns à equipe!”</p>
         <strong>Juciane Alessi</strong>
       </div>
 
@@ -507,7 +518,7 @@
       </div>
 
       <div class="testimonial">
-        <p>“É sem dúvidas a melhor academia que já treinei. Os aparelhos e equipamentos são novos e de excelente qualidade. Além disso, os professores são extremamente engajados, montam treinos personalizados e acompanham de perto cada movimento, corrigindo sempre que necessário. Super recomendo!”</p>
+        <p>“É sem dúvidas a melhor academia que já treinei! Os aparelhos e equipamentos são novos e de excelente qualidade. Além disso, os professores são extremamente engajados, montam treinos personalizados e acompanham de perto cada movimento, corrigindo sempre que necessário. Super recomendo!”</p>
         <strong>Pri Milani</strong>
       </div>
     </div>
@@ -529,7 +540,7 @@
         <p><strong>Segunda a sexta:</strong> 6h às 22h</p>
         <p><strong>Sábado:</strong> 9h às 14h</p>
         <p><strong>Domingo e feriado:</strong> 9h às 12h30</p>
-        <br />
+        <br>
         <a class="btn btn-primary" href="https://wa.me/5551990131230?text=Olá!%20Vim%20pelo%20site%20do%20Espaço%20M50%20e%20quero%20conhecer%20o%20espaço." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
       </div>
 
