@@ -800,12 +800,12 @@
 
       .hero {
         position: relative;
-        min-height: 72vh;
-        padding: 120px 5% 110px;
+        min-height: 86vh;
+        padding: 84px 5% 110px;
         margin-bottom: -96px;
         background-size: cover;
-        background-position: center top;
-        align-items: flex-start;
+        background-position: center 8%;
+        align-items: center;
         overflow: hidden;
         z-index: 1;
       }
@@ -827,9 +827,10 @@
         z-index: 2;
         width: 100%;
         max-width: 100%;
-        padding: 14px 12px;
+        padding: 12px 12px;
+        margin-top: 160px;
         border-radius: 14px;
-        background: rgba(0,0,0,0.38);
+        background: rgba(0,0,0,0.34);
         backdrop-filter: blur(3px);
       }
 
@@ -950,12 +951,27 @@
 
       .schedule-grid {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        scroll-snap-type: x proximity;
+      }
+
+      .schedule-grid::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .schedule-grid::-webkit-scrollbar-thumb {
+        background: rgba(161, 15, 26, 0.28);
+        border-radius: 999px;
       }
 
       .schedule-day {
         min-height: auto;
+        min-width: 170px;
+        flex: 0 0 170px;
+        scroll-snap-align: start;
       }
 
       .class-card,
