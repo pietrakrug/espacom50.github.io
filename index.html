@@ -57,26 +57,22 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
       color: #fff;
+      background: transparent;
     }
 
     .logo img {
       height: 54px;
       width: auto;
       display: block;
+      mix-blend-mode: screen;
+      background: transparent;
     }
 
     .logo-symbol {
       height: 42px;
-    }
-
-    .logo span {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      line-height: 1;
     }
 
     nav {
@@ -115,6 +111,15 @@
       padding: 28px;
       border-radius: 18px;
       backdrop-filter: blur(2px);
+    }
+
+    .hero-brand {
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.94);
     }
 
     .hero h1 {
@@ -625,7 +630,7 @@
       border-radius: 18px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.45);
       background: #fff;
-      transform: none;
+      transform: rotate(90deg);
     }
 
     .modal-close,
@@ -745,7 +750,7 @@
       .gallery-item img,
       .gallery-item:hover img,
       .modal-content img {
-        transform: none;
+        transform: rotate(90deg);
       }
 
       .map-frame {
@@ -770,7 +775,6 @@
     <a href="#topo" class="logo">
       <img src="./imagens/1.png" alt="Logomarca Espaço M50" />
       <img src="./imagens/2.png" alt="Símbolo Espaço M50" class="logo-symbol" />
-      <span>ESPAÇO M50</span>
     </a>
     <nav>
       <a href="#sobre">Sobre</a>
@@ -785,10 +789,11 @@
   <main id="topo">
     <section class="hero">
       <div class="hero-content">
+        <div class="hero-brand">ESPAÇO M50</div>
         <h1>Movimento, força e autonomia para 50+</h1>
         <p>Um espaço pensado para quem quer treinar com segurança, acompanhamento profissional e foco em qualidade de vida.</p>
         <div class="buttons">
-          <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+          <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Converse com nossos especialistas agora</a>
           <a class="btn btn-secondary" href="#modalidades">Ver modalidades</a>
         </div>
         <a class="rating-link" href="https://www.google.com/search?q=Espa%C3%A7o+M50+Porto+Alegre#lrd=0x95197969a12432ff:0x6dd8abf34f2a7f87,1,,,," target="_blank" rel="noopener noreferrer">⭐ 5,0 no Google</a>
@@ -839,7 +844,7 @@
       <div class="cards">
         <div class="card class-card featured">
           <h3>Musculação sênior</h3>
-          <p>Treinos voltados ao público 50+, com foco em força, autonomia, segurança e acompanhamento próximo.</p>
+          <p>Treinos voltados ao público 50+, com foco em força, autonomia, segurança e acompanhamento próximo. Acompanhamento semi-personal, com no máximo 3 alunos por professor.</p>
         </div>
         <div class="card class-card">
           <div class="class-icon" aria-hidden="true">🧘</div>
@@ -919,8 +924,9 @@
           <p><strong>WhatsApp:</strong> <a href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">(51) 90131-230</a></p>
           <p><strong>Instagram:</strong> <a href="https://www.instagram.com/espacom50/" target="_blank" rel="noopener noreferrer">@espacom50</a></p>
           <p><strong>Endereço:</strong> Rua Hilário Ribeiro, 50 - Moinhos de Vento, Porto Alegre/RS</p>
+          <p><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 6h às 22h<br>Sábado - 9h às 14h<br>Domingo e feriado - 9h às 12h30</p>
           <div class="contact-actions">
-            <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Converse com nossos especialistas agora</a>
             <a class="btn btn-secondary" href="https://maps.google.com/?q=Rua+Hil%C3%A1rio+Ribeiro,+50,+Moinhos+de+Vento,+Porto+Alegre" target="_blank" rel="noopener noreferrer">Como chegar</a>
           </div>
         </div>
