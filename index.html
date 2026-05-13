@@ -719,12 +719,14 @@
         width: 100%;
       }
 
-      .logo img {
-        height: 44px;
+      .logo img:first-child {
+        height: 42px;
+        width: auto;
       }
 
       .logo-symbol {
-        height: 96px;
+        height: 120px;
+        width: auto;
       }
 
       nav {
@@ -737,19 +739,36 @@
       }
 
       .hero {
-        min-height: 34vh;
-        padding: 72px 5% 14px;
+        position: relative;
+        min-height: 72vh;
+        padding: 120px 5% 20px;
         background-size: cover;
-        background-position: center 8%;
-        align-items: flex-end;
+        background-position: center top;
+        align-items: flex-start;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.35),
+          rgba(0,0,0,0.68)
+        );
+        z-index: 1;
       }
 
       .hero-content {
+        position: relative;
+        z-index: 2;
         width: 100%;
         max-width: 100%;
-        padding: 12px 10px;
+        padding: 14px 12px;
         border-radius: 14px;
-        background: rgba(0,0,0,0.46);
+        background: rgba(0,0,0,0.38);
+        backdrop-filter: blur(3px);
       }
 
       .hero-brand {
@@ -765,14 +784,14 @@
         font-size: 22px;
         line-height: 1.05;
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
       }
 
       .hero p {
         font-size: 13px;
-        line-height: 1.34;
+        line-height: 1.4;
         text-align: center;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
 
       .buttons,
