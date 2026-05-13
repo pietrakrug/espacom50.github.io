@@ -281,6 +281,26 @@
       margin: 0;
     }
 
+    .class-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--red-soft);
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 14px;
+      box-shadow: inset 0 0 0 1px rgba(161, 15, 26, 0.12);
+    }
+
+    .class-card.featured .class-icon {
+      background: rgba(255,255,255,0.18);
+      color: var(--white);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+    }
+
     .class-card.featured {
       background: var(--red);
       border: 1px solid var(--red-dark);
@@ -537,7 +557,7 @@
     }
 
     .faq-item.active .faq-answer {
-      max-height: 220px;
+      max-height: 260px;
       padding: 0 24px 22px;
     }
 
@@ -750,7 +770,6 @@
       <a href="#sobre">Sobre</a>
       <a href="#metodologia">Metodologia</a>
       <a href="#modalidades">Modalidades</a>
-      <a href="#horarios">Horários</a>
       <a href="#galeria">Galeria</a>
       <a href="#contato">Contato</a>
       <a href="#faq">FAQ</a>
@@ -818,18 +837,22 @@
           <p>Treinos voltados ao público 50+, com foco em força, autonomia, segurança e acompanhamento próximo.</p>
         </div>
         <div class="card class-card">
+          <div class="class-icon" aria-hidden="true">🧘</div>
           <h3>Alongamento</h3>
           <p>Aulas para melhorar mobilidade, flexibilidade, postura e conforto nos movimentos do dia a dia.</p>
         </div>
         <div class="card class-card">
+          <div class="class-icon" aria-hidden="true">🤸</div>
           <h3>Mat Pilates</h3>
           <p>Exercícios no solo com foco em consciência corporal, fortalecimento do centro do corpo e estabilidade.</p>
         </div>
         <div class="card class-card">
+          <div class="class-icon" aria-hidden="true">☯️</div>
           <h3>Yoga</h3>
           <p>Prática voltada à respiração, equilíbrio, mobilidade, concentração e bem-estar físico e mental.</p>
         </div>
         <div class="card class-card">
+          <div class="class-icon" aria-hidden="true">💃</div>
           <h3>Dança</h3>
           <p>Aulas leves e dinâmicas para estimular coordenação, ritmo, memória e prazer em se movimentar.</p>
         </div>
@@ -853,7 +876,7 @@
           </div>
           <div class="schedule-day">
             <h4>Quinta</h4>
-            <div class="schedule-item schedule-empty"><strong>-</strong> Consulte disponibilidade</div>
+            <div class="schedule-item schedule-empty"><strong>-</strong> Coletiva off</div>
           </div>
           <div class="schedule-day">
             <h4>Sexta</h4>
@@ -911,21 +934,21 @@
       <p class="section-text">Algumas respostas para dúvidas comuns de quem quer começar.</p>
       <div class="faq">
         <div class="faq-item">
-          <button class="faq-question">Preciso já ter experiência com treino? <span>+</span></button>
+          <button class="faq-question">Como funciona o agendamento inicial? <span>+</span></button>
           <div class="faq-answer">
-            <p>Não. O acompanhamento é pensado para respeitar o seu nível atual e construir evolução com segurança.</p>
+            <p>Antes de iniciar qualquer treino, o aluno passa por um diagnóstico inicial. Este diagnóstico contempla uma série de testes físicos e questionários para identificar as necessidades e limitações fisiológicas de cada perfil.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">As aulas são voltadas apenas para idosos? <span>+</span></button>
+          <button class="faq-question">Preciso agendar horário? <span>+</span></button>
           <div class="faq-answer">
-            <p>O foco principal é o público 50+, mas cada pessoa é recebida de forma individual, considerando sua condição e objetivos.</p>
+            <p>É necessário o agendamento das duas primeiras aulas, para a realização do diagnóstico inicial. Após isso, é possível vir conforme sua disponibilidade de agenda permitir.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Posso treinar mesmo com limitações ou dores? <span>+</span></button>
+          <button class="faq-question">Posso fazer quantas modalidades? <span>+</span></button>
           <div class="faq-answer">
-            <p>Sim, desde que haja avaliação adequada. O planejamento considera necessidades específicas para tornar a prática mais segura e confortável.</p>
+            <p>Você pode fazer todas as modalidades que desejar. Com a contratação de qualquer um de nossos planos, terá acesso ao nosso ecossistema completo.</p>
           </div>
         </div>
       </div>
