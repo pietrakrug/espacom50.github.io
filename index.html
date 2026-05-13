@@ -51,9 +51,24 @@
     }
 
     .logo {
-      font-size: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo img {
+      height: 54px;
+      width: auto;
+      display: block;
+    }
+
+    .logo span {
+      font-size: 24px;
       font-weight: 700;
       letter-spacing: 1px;
+      line-height: 1;
     }
 
     nav {
@@ -638,13 +653,29 @@
       .gallery-item img {
         height: 280px;
       }
+
+      .logo {
+        justify-content: center;
+      }
+
+      .logo img {
+        height: 44px;
+      }
+
+      .logo span {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">ESPAÇO M50</div>
+    <a href="#inicio" class="logo">
+      <img src="imagens/2.png" alt="Logomarca do Espaço M50">
+      <span>ESPAÇO M50</span>
+    </a>
+
     <nav>
       <a href="#inicio">Início</a>
       <a href="#metodologia">Metodologia</a>
