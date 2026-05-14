@@ -225,6 +225,52 @@
       gap: 24px;
     }
 
+    .about-showcase {
+      margin: 10px 0 44px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 420px);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .about-image-card,
+    .about-highlight-card {
+      background: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #f0e3e5;
+    }
+
+    .about-image-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-highlight-card {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(180deg, #ffffff, #fcf1f3);
+    }
+
+    .about-highlight-card h3 {
+      font-size: 28px;
+      color: var(--red);
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+
+    .about-highlight-card p {
+      font-size: 16px;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+
     .modalities .cards {
       grid-template-columns: 1.35fr repeat(4, minmax(150px, 1fr));
       gap: 12px;
@@ -467,18 +513,17 @@
     }
 
     .gallery-item img {
-      width: 320px;
+      width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
       background: #ffffff;
-      transform: rotate(90deg);
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .gallery-item:hover img {
-      transform: rotate(90deg) scale(1.04);
+      transform: scale(1.04);
       opacity: 0.92;
     }
 
@@ -679,7 +724,7 @@
       border-radius: 18px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.45);
       background: #fff;
-      transform: rotate(90deg);
+      object-fit: contain;
     }
 
     .modal-close,
@@ -742,6 +787,10 @@
 
       .schedule-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .about-showcase {
+        grid-template-columns: 1fr;
       }
 
       .modal-prev {
@@ -890,6 +939,23 @@
         grid-template-columns: 1fr;
       }
 
+      .about-showcase {
+        gap: 18px;
+        margin-bottom: 30px;
+      }
+
+      .about-image-card img {
+        min-height: 240px;
+      }
+
+      .about-highlight-card {
+        padding: 22px;
+      }
+
+      .about-highlight-card h3 {
+        font-size: 24px;
+      }
+
       .modalities-list {
         display: flex;
         flex-direction: column;
@@ -1023,20 +1089,14 @@
 
       .gallery.gallery-compact {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 8px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
       }
 
       .gallery-item {
-        min-height: 88px;
-        height: 88px;
+        min-height: 140px;
+        height: 140px;
         border-radius: 10px;
-      }
-
-      .gallery-item img,
-      .gallery-item:hover img,
-      .modal-content img {
-        transform: rotate(90deg);
       }
 
       .contact-card p {
@@ -1093,6 +1153,18 @@
     <section id="sobre" class="intro-block">
       <h2 class="section-title">Um espaço acolhedor para continuar em movimento</h2>
       <p class="section-text">No Espaço M50, acreditamos que envelhecer com saúde passa por manter o corpo ativo, forte e funcional. Nosso trabalho é direcionado ao público 50+, respeitando o ritmo, as necessidades e os objetivos de cada aluno.</p>
+
+      <div class="about-showcase">
+        <div class="about-image-card">
+          <img src="./imagens/ESPACO6.jpeg" alt="Ambiente interno do Espaço M50" />
+        </div>
+        <div class="about-highlight-card">
+          <h3>Um ambiente preparado para acolher com segurança</h3>
+          <p>O Espaço M50 foi pensado para oferecer uma experiência confortável, organizada e adaptada ao público 50+, unindo acompanhamento próximo e estrutura adequada.</p>
+          <p>A proposta é fazer com que cada aluno se sinta seguro para evoluir no seu ritmo, com confiança e constância.</p>
+        </div>
+      </div>
+
       <div class="cards">
         <div class="card">
           <h3>Atendimento próximo</h3>
@@ -1195,14 +1267,29 @@
       <h2 class="section-title">Galeria</h2>
       <p class="section-text">Conheça o espaço do Espaço M50 e veja um pouco do ambiente preparado para acolher cada aluno com conforto e segurança.</p>
       <div class="gallery gallery-compact">
-        <div class="gallery-item"><img src="./imagens/99235.jpg" alt="Ambiente Espaço M50 1" /></div>
-        <div class="gallery-item"><img src="./imagens/99237.jpg" alt="Ambiente Espaço M50 2" /></div>
-        <div class="gallery-item"><img src="./imagens/99238.jpg" alt="Ambiente Espaço M50 3" /></div>
-        <div class="gallery-item"><img src="./imagens/99246.jpg" alt="Ambiente Espaço M50 4" /></div>
-        <div class="gallery-item"><img src="./imagens/99247.jpg" alt="Ambiente Espaço M50 5" /></div>
-        <div class="gallery-item"><img src="./imagens/99248.jpg" alt="Ambiente Espaço M50 6" /></div>
-        <div class="gallery-item"><img src="./imagens/99249.jpg" alt="Ambiente Espaço M50 7" /></div>
-        <div class="gallery-item"><img src="./imagens/99254.jpg" alt="Ambiente Espaço M50 8" /></div>
+        <div class="gallery-item"><img src="./imagens/ALUNO1.jpeg" alt="Aluno do Espaço M50 em atividade 1" /></div>
+        <div class="gallery-item"><img src="./imagens/ESPACO1.jpeg" alt="Ambiente do Espaço M50 1" /></div>
+
+        <div class="gallery-item"><img src="./imagens/ALUNO2.jpeg" alt="Aluno do Espaço M50 em atividade 2" /></div>
+        <div class="gallery-item"><img src="./imagens/ESPACO2.jpeg" alt="Ambiente do Espaço M50 2" /></div>
+
+        <div class="gallery-item"><img src="./imagens/ALUNO3.jpeg" alt="Aluno do Espaço M50 em atividade 3" /></div>
+        <div class="gallery-item"><img src="./imagens/ESPACO6.jpeg" alt="Ambiente do Espaço M50 6" /></div>
+
+        <div class="gallery-item"><img src="./imagens/ALUNO4.jpeg" alt="Aluno do Espaço M50 em atividade 4" /></div>
+        <div class="gallery-item"><img src="./imagens/ESPACO3.jpeg" alt="Ambiente do Espaço M50 3" /></div>
+
+        <div class="gallery-item"><img src="./imagens/ALUNO5.jpeg" alt="Aluno do Espaço M50 em atividade 5" /></div>
+        <div class="gallery-item"><img src="./imagens/ESPACO4.jpeg" alt="Ambiente do Espaço M50 4" /></div>
+
+        <div class="gallery-item"><img src="./imagens/ALUNO6.jpeg" alt="Aluno do Espaço M50 em atividade 6" /></div>
+        <div class="gallery-item"><img src="./imagens/ESPACO5.jpeg" alt="Ambiente do Espaço M50 5" /></div>
+
+        <div class="gallery-item"><img src="./imagens/ALUNO7.jpeg" alt="Aluno do Espaço M50 em atividade 7" /></div>
+        <div class="gallery-item"><img src="./imagens/ESPACO7.jpeg" alt="Ambiente do Espaço M50 7" /></div>
+
+        <div class="gallery-item"><img src="./imagens/ALUNO8.jpeg" alt="Aluno do Espaço M50 em atividade 8" /></div>
+        <div class="gallery-item"><img src="./imagens/ESPACO8.jpeg" alt="Ambiente do Espaço M50 8" /></div>
       </div>
     </section>
 
